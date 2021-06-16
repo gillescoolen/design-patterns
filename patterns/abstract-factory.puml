@@ -1,0 +1,50 @@
+@startuml abstract-factory
+
+class Developer {
+  + Developer(WebsiteFactory factory)
+  + createWebsite()
+}
+
+interface WebsiteFactory {
+  + CreateComponent()
+  + CreateRouter()
+}
+
+class ReactFactory {
+  + CreateComponent()
+  + CreateRouter()
+}
+
+class VueFactory {
+  + CreateComponent()
+  + CreateRouter()
+}
+
+interface Router
+
+class ReactRouter
+class VueRouter
+
+interface Component
+
+class ReactComponent
+class VueComponent
+
+Developer --> WebsiteFactory
+
+ReactFactory --|> WebsiteFactory
+VueFactory --|> WebsiteFactory
+
+ReactRouter --|> Router
+VueRouter --|> Router
+
+ReactComponent --|> Component
+VueComponent --|> Component
+
+ReactFactory --> ReactComponent
+ReactFactory --> ReactRouter
+
+VueFactory --> VueComponent
+VueFactory --> VueRouter
+
+@enduml

@@ -1,4 +1,4 @@
-@startuml visitor
+@startuml template-method
 
 abstract Game {
   + start()
