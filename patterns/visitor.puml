@@ -1,6 +1,6 @@
 @startuml visitor
 
-class Shape {
+interface Shape {
   + accept(Visitor v)
 }
 
@@ -16,7 +16,7 @@ class Triangle {
   + accept(Visitor v)
 }
 
-class ShapeVisitor {
+interface ShapeVisitor {
   + visit(Circle v)
   + visit(Square v)
   + visit(Triangle v)
