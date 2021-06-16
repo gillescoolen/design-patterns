@@ -28,11 +28,11 @@ class ShapeCalculateAreaVisitor {
   + visit(Triangle v)
 }
 
-Circle --|> Shape
-Square --|> Shape
-Triangle --|> Shape
+Circle ..|> Shape
+Square ..|> Shape
+Triangle ..|> Shape
 
-ShapeCalculateAreaVisitor --|> ShapeVisitor
+ShapeCalculateAreaVisitor ..|> ShapeVisitor
 
 Shape --> ShapeVisitor
 
