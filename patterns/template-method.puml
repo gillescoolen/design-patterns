@@ -1,0 +1,24 @@
+@startuml visitor
+
+abstract Game {
+  + start()
+  + end()
+  + play()
+}
+
+class Football {
+  + start()
+  + end()
+  + play()
+}
+
+class Tennis {
+  + start()
+  + end()
+  + play()
+}
+
+Football --|> Game
+Tennis --|> Game
+
+@enduml
