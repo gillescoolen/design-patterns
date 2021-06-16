@@ -1,0 +1,39 @@
+@startuml visitor
+
+class Shape {
+  + accept(Visitor v)
+}
+
+class Circle {
+  + accept(Visitor v)
+}
+
+class Square {
+  + accept(Visitor v)
+}
+
+class Triangle {
+  + accept(Visitor v)
+}
+
+class ShapeVisitor {
+  + visit(Circle v)
+  + visit(Square v)
+  + visit(Triangle v)
+}
+
+class ShapeCalculateAreaVisitor {
+  + visit(Circle v)
+  + visit(Square v)
+  + visit(Triangle v)
+}
+
+Circle --|> Shape
+Square --|> Shape
+Triangle --|> Shape
+
+ShapeCalculateAreaVisitor --|> ShapeVisitor
+
+Shape --> ShapeVisitor
+
+@enduml
