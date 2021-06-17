@@ -1,0 +1,31 @@
+@startuml decorator
+
+class Notifier {
+  + send(string message)
+}
+
+class BaseDecorator {
+  - wrappee: Notifier
+  + BaseDecorator(wrappee)
+  + send(string message)
+}
+
+class SMSDecorator {
+  + send(string message)
+}
+
+class DiscordDecorator {
+  + send(string message)
+}
+
+class SlackDecorator {
+  + send(string message)
+}
+
+BaseDecorator ..|> Notifier
+
+SMSDecorator ..|> BaseDecorator
+DiscordDecorator ..|> BaseDecorator
+SlackDecorator ..|> BaseDecorator
+
+@enduml
