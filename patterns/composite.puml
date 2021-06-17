@@ -11,6 +11,7 @@ class Leaf {
 }
 
 class Composite {
+  - Component[] children
   + operation()
   + add(Component component)
 }
