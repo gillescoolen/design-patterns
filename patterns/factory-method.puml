@@ -1,0 +1,23 @@
+@startuml factory-method
+
+class Developer {
+  + createWebsite(string name)
+}
+
+interface WebsiteFactory {
+  - types: Dictionary<string name, Type type>
+  + createWebsite(string name): Website
+}
+
+class Website
+
+class ReactWebsite
+class VueWebsite
+
+Developer --> WebsiteFactory
+WebsiteFactory --> Website
+
+ReactWebsite ..|> Website
+VueWebsite ..|> Website
+
+@enduml
