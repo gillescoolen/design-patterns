@@ -1,0 +1,43 @@
+@startuml builder
+
+
+class Developer {
+  + createWebsite()
+  + createApp()
+}
+
+interface Builder {
+  + reset()
+  + addButton(string color)
+  + addInput(string type)
+  + addImage(string source)
+}
+
+class WebsiteBuilder {
+  + reset()
+  + addButton(Button button)
+  + addInput(Input input)
+  + addImage(Image source)
+  + Website getResult()
+}
+
+class AppBuilder {
+  + reset()
+  + addButton(Button button)
+  + addInput(Input input)
+  + addImage(Image source)
+  + App getResult()
+}
+
+class Website
+class App
+
+Developer --> Builder
+
+WebsiteBuilder ..|> Builder
+AppBuilder ..|> Builder
+
+WebsiteBuilder --> Website
+AppBuilder --> App
+
+@enduml
