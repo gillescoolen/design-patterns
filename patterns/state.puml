@@ -1,0 +1,33 @@
+@startuml state
+
+class VideoPlayer {
+  - State state
+  + changeState(State state)
+  + play()
+}
+
+class State {
+  - VideoPlayer videoPlayer 
+  + State(VideoPlayer videoPlayer)
+  + play()
+}
+
+class PausedState {
+  + play()
+}
+
+class PlayingState {
+  + play()
+}
+
+class BufferState {
+  + play()
+}
+
+VideoPlayer o--> State
+
+PausedState ..|> State
+PlayingState ..|> State
+BufferState ..|> State
+
+@enduml
