@@ -5,8 +5,8 @@ class Developer {
 }
 
 interface WebsiteFactory {
-  - types: Dictionary<string name, Type type>
-  + createWebsite(string name): Website
+  - Dictionary<string name, Type type> types
+  + createWebsite(string name)
 }
 
 class Website

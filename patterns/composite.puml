@@ -12,7 +12,7 @@ class Leaf {
 
 class Composite {
   + operation()
-  + add(Component)
+  + add(Component component)
 }
 
 Client --> Component

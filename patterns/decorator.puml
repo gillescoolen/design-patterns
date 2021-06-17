@@ -6,7 +6,7 @@ class Notifier {
 
 class BaseDecorator {
   - wrappee: Notifier
-  + BaseDecorator(wrappee)
+  + BaseDecorator(Notifier wrappee)
   + send(string message)
 }
 
