@@ -1,0 +1,24 @@
+@startuml composite
+
+class Client
+
+interface Component {
+  + operation()
+}
+
+class Leaf {
+  + operation()
+}
+
+class Composite {
+  + operation()
+  + add(Component)
+}
+
+Client --> Component
+
+Leaf ..|> Component
+Composite ..|> Component
+Composite o--> Component
+
+@enduml
