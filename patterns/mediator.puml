@@ -1,0 +1,39 @@
+@startuml mediator
+
+interface Mediator {
+  + notify(Component sender, string event)
+}
+
+class Component {
+  # Mediator dialog
+  + Component(dialog)
+  + click()
+}
+
+class Button {
+  + click()
+}
+
+class Textbox {
+  + click()
+}
+
+class Checkbox {
+  + click()
+}
+
+class AuthenticationDialog {
+  + notify(Component sender, string event)
+}
+
+Component <--> Mediator
+
+Button ..|> Component
+Textbox ..|> Component
+Checkbox ..|> Component
+
+Button <--* AuthenticationDialog
+Textbox <--* AuthenticationDialog
+Checkbox <--* AuthenticationDialog
+
+@enduml
