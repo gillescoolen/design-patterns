@@ -41,10 +41,15 @@ VueRouter ..|> Router
 ReactComponent ..|> Component
 VueComponent ..|> Component
 
-ReactFactory --> ReactComponent
-ReactFactory --> ReactRouter
+ReactFactory ..> ReactComponent
+ReactFactory ..> ReactRouter
 
-VueFactory --> VueComponent
-VueFactory --> VueRouter
+VueFactory ..> VueComponent
+VueFactory ..> VueRouter
+
+Developer --> ReactComponent
+Developer --> ReactRouter
+Developer --> VueComponent
+Developer --> VueRouter
 
 @enduml
