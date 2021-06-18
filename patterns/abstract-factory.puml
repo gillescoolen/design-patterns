@@ -47,9 +47,7 @@ ReactFactory ..> ReactRouter
 VueFactory ..> VueComponent
 VueFactory ..> VueRouter
 
-Developer --> ReactComponent
-Developer --> ReactRouter
-Developer --> VueComponent
-Developer --> VueRouter
+Developer --> Component
+Developer --> Router
 
 @enduml
